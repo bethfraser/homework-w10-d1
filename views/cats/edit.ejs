@@ -1,0 +1,16 @@
+<h1>Edit Cat</h1>
+
+<form action="/cats/<%= id %>" method="post">
+
+<input type="hidden" name="id" value="<%= id %>">
+Name<br>
+<input type="text" name="name" value="<%= cat.name %>"><br>
+Appearance<br>
+<input type="text" name="appearance" value="<%= cat.appearance %>"><br>
+Personality<br>
+<input type="text" name="personality" value="<%= cat.personality %>"><br>
+Image URL<br>
+<input type="text" name="imageURL" value="<%= cat.imageURL %>"><br>
+
+<input type="submit">
+</form>

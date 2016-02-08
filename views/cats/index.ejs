@@ -1,0 +1,8 @@
+<h1>Cat Directory</h1>
+
+<a href="/cats/new">Add new cat</a><br><br>
+
+<% for (var i = 0; i < cats.catList.length; i++) { %>
+<a href="/cats/<%= i+1 %>">
+<%= cats.catList[i].name %></a><br>
+<% } %>
