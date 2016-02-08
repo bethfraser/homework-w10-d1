@@ -4,3 +4,10 @@
 
 Appearance: <%= cat.appearance %><br>
 Personality: <%= cat.personality %>
+
+<br><br>
+<a href="/cats/<%= id %>/edit">Edit</a><br>
+
+<form action="/cats/<%= id %>/delete" method="post">
+<input type="submit" value="Delete">
+</form>

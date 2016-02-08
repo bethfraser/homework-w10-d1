@@ -28,7 +28,7 @@ catRouter.post('/', function(req, res) {
 
 catRouter.get('/:id', function(req, res){
   // SHOW
-  res.render('cats/show', {cat: cats.catList[req.params.id-1]});
+  res.render('cats/show', {cat: cats.catList[req.params.id-1], id: (req.params.id)});
 })
 
 catRouter.get('/:id/edit', function(req, res) {
@@ -46,9 +46,16 @@ catRouter.post('/:id', function(req, res) {
   res.redirect('/')
 });
 
-catRouter.post('/:id', function(req, res) {
+catRouter.post('/:id/delete', function(req, res) {
   // DELETE
-  res.send("DELETE planet " + solarSystem.planets[req.params.id-1].name);
+  var newArray = [];
+  for(i in cats.catList){
+      if(parseInt(i)+1 != req.params.id) {
+      newArray.push(cats.catList[i]);
+    }
+  }
+  cats.catList = newArray;
+  res.redirect('/cats');
 });
 
 module.exports = catRouter;
