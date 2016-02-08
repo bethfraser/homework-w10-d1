@@ -1,0 +1,41 @@
+body {
+  font-family: Helvetica;
+  padding-left: 30px;
+}
+
+input[type=text] {
+  padding: 5px;
+  margin: 5px;
+  font-size: 1em;
+  width: 200px;
+}
+
+h1 {
+  font-family: Georgia;
+}
+
+.cat-name {
+  color: #e5007d;
+  background-color: white;
+  border: 2px solid #e5007d;
+}
+
+a, input[type=submit] {
+  background-color: #e5007d;
+  color: white;
+  padding: 5px 20px;
+  text-decoration: none;
+  border: 0;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+a:hover, input[type=submit]:hover {
+  background-color: #ef66b1;
+  color: white;
+  padding: 5px 20px;
+}
