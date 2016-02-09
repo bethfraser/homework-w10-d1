@@ -33,18 +33,18 @@ catRouter.get('/:id', function(req, res){
 
 catRouter.get('/:id/edit', function(req, res) {
   // EDIT
-  res.render('cats/edit', {cat: cats.catList[req.params.id - 1], id: (req.params.id - 1)});
+  res.render('cats/edit', {cat: cats.catList[req.params.id - 1], id: req.params.id});
 });
 
 catRouter.post('/:id', function(req, res) {
   // UPDATE
-  var updateCat = cats.catList[req.params.id];
+  var updateCat = cats.catList[req.params.id - 1];
   updateCat.name = req.body.name;
   updateCat.appearance = req.body.appearance;
   updateCat.personality = req.body.personality;
   updateCat.imageURL = req.body.imageURL;
-  res.redirect('/')
-});
+  res.redirect('/cats')
+}); 
 
 catRouter.post('/:id/delete', function(req, res) {
   // DELETE
